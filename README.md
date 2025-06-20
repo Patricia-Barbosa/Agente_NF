@@ -14,7 +14,7 @@ Neste projeto, foi utilizada uma arquitetura low-code com foco em automação in
 ![OpenAI](https://img.shields.io/badge/-OpenAI-333333?style=flat&logo=OpenAI)
 
 # Supabase.
-![Supabase](https://img.shields.io/badge/-Supabass-333333?style=flat&logo=supabase)
+![Supabase](https://img.shields.io/badge/-Supabase-333333?style=flat&logo=supabase)
 
 Foi a plataforma escolhida para armazenar os dados estruturados em duas tabelas:
 - nfs_cabecalho: com dados gerais das notas fiscais (emitente, destinatário, valor, data, etc.).
