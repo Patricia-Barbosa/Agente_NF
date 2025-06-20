@@ -56,3 +56,9 @@ o	Outro para a tabela nfs_itens (produtos e serviços).
 - O agente monta uma resposta clara e didática com base nos dados reais.
 - Se os dados não estiverem disponíveis, o agente responde de forma transparente:
 “Não é possível responder com os dados disponíveis.”
+
+# Chat Online para interagir com o agente:
+
+![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)
+
+https://silvia-rodrigues.app.n8n.cloud/webhook/9dd6b60e-6c9f-477d-bb5f-56626ccd1b6a/chat
