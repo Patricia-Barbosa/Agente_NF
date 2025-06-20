@@ -5,20 +5,29 @@ Agente desenvolvido no curso Agentes Autônomos com  Redes Generativas da I2A2.
 
 Neste projeto, foi utilizada uma arquitetura low-code com foco em automação inteligente e integração de dados em tempo real, por meio das seguintes tecnologias: n8n (Node-based Workflow Automation)
 # Elementos usado no n8n:
-- Trigger de Chat: para receber mensagens do usuário de forma simulada ou real (como em um chatbot ou WhatsApp).
--	AI Agent: um nó com modelo de linguagem conectado à OpenAI, responsável por interpretar perguntas e gerar respostas com base nas consultas.
-- Ferramentas PostgreSQL: dois nós conectados à base Supabase, um para a tabela nfs_cabecalho e outro para nfs_itens, ambos com consultas diretas aos dados.
-- Memória de Conversa: implementada com memoryBufferWindow, permite ao agente manter contexto e coerência nas interações.
+*Trigger de Chat:*
+- para receber mensagens do usuário de forma simulada ou real (como em um chatbot ou WhatsApp).
+  
+*AI Agent:*
+- um nó com modelo de linguagem conectado à OpenAI, responsável por interpretar perguntas e gerar respostas com base nas consultas.
+  
+*Ferramentas PostgreSQL:* 
+- dois nós conectados à base Supabase, um para a tabela nfs_cabecalho e outro para nfs_itens, ambos com consultas diretas aos dados.
+  
+*Memória de Conversa:*
+- implementada com memoryBufferWindow, permite ao agente manter contexto e coerência nas interações.
 - Modelo de Linguagem: GPT-4.1-mini foi utilizado inicialmente.
-# A API da OpenAI foi utilizada para gerar respostas naturais e contextualizadas. 
+# Foi utilizado a API da OpenAI para gerar respostas naturais e contextualizadas. 
 ![OpenAI](https://img.shields.io/badge/-OpenAI-333333?style=flat&logo=OpenAI)
 
 # Supabase.
 ![Supabase](https://img.shields.io/badge/-Supabase-333333?style=flat&logo=supabase)
 
 Foi a plataforma escolhida para armazenar os dados estruturados em duas tabelas:
-- nfs_cabecalho: com dados gerais das notas fiscais (emitente, destinatário, valor, data, etc.).
-- nfs_itens: com os itens comercializados em cada nota (produto, quantidade, valor, CFOP, etc.).
+
+*nfs_cabecalho:* com dados gerais das notas fiscais (emitente, destinatário, valor, data, etc.).
+
+*nfs_itens:* com os itens comercializados em cada nota (produto, quantidade, valor, CFOP, etc.).
 A relação entre as tabelas se dá pela coluna "CHAVE_DE_ACESSO", permitindo ao agente realizar consultas cruzadas conforme a pergunta do usuário.
 # Arquitetura Geral
 Usuário → ChatTrigger (n8n) 
