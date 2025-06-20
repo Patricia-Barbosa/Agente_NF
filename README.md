@@ -11,7 +11,11 @@ Neste projeto, foi utilizada uma arquitetura low-code com foco em automação in
 - Memória de Conversa: implementada com memoryBufferWindow, permite ao agente manter contexto e coerência nas interações.
 - Modelo de Linguagem: GPT-4.1-mini foi utilizado inicialmente.
 # A API da OpenAI foi utilizada para gerar respostas naturais e contextualizadas. 
+![OpenAI](https://img.shields.io/badge/-OpenAI-333333?style=flat&logo=OpenAI)
+
 # Supabase.
+![Supabase](https://img.shields.io/badge/-Supabass-333333?style=flat&logo=supabase)
+
 Foi a plataforma escolhida para armazenar os dados estruturados em duas tabelas:
 - nfs_cabecalho: com dados gerais das notas fiscais (emitente, destinatário, valor, data, etc.).
 - nfs_itens: com os itens comercializados em cada nota (produto, quantidade, valor, CFOP, etc.).
