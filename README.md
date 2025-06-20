@@ -1,6 +1,8 @@
 # Agente_NF
 Agente desenvolvido no curso Agentes Autônomos com  Redes Generativas da I2A2.
 # Framework e Tecnologias Utilizadas
+![N8N](https://img.shields.io/badge/-n8n-333333?style=flat&logo=n8n)
+
 Neste projeto, foi utilizada uma arquitetura low-code com foco em automação inteligente e integração de dados em tempo real, por meio das seguintes tecnologias: n8n (Node-based Workflow Automation)
 # Elementos usado no n8n:
 - Trigger de Chat: para receber mensagens do usuário de forma simulada ou real (como em um chatbot ou WhatsApp).
