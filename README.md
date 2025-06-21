@@ -1,64 +1,132 @@
-# Agente_NF
-Agente desenvolvido no curso Agentes Autônomos com  Redes Generativas da I2A2.
-# Framework e Tecnologias Utilizadas
-![N8N](https://img.shields.io/badge/-n8n-333333?style=flat&logo=n8n)
+<h1 align="center">🤖 Agente_NF - Assistente Inteligente para Notas Fiscais</h1>
 
-Neste projeto, foi utilizada uma arquitetura low-code com foco em automação inteligente e integração de dados em tempo real, por meio das seguintes tecnologias: n8n (Node-based Workflow Automation)
-# Elementos usado no n8n:
-*Trigger de Chat:*
-- para receber mensagens do usuário de forma simulada ou real (como em um chatbot ou WhatsApp).
-  
-*AI Agent:*
-- um nó com modelo de linguagem conectado à OpenAI, responsável por interpretar perguntas e gerar respostas com base nas consultas.
-  
-*Ferramentas PostgreSQL:* 
-- dois nós conectados à base Supabase, um para a tabela nfs_cabecalho e outro para nfs_itens, ambos com consultas diretas aos dados.
-  
-*Memória de Conversa:*
-- implementada com memoryBufferWindow, permite ao agente manter contexto e coerência nas interações.
-- Modelo de Linguagem: GPT-4.1-mini foi utilizado inicialmente.
-# Foi utilizado a API da OpenAI para gerar respostas naturais e contextualizadas. 
-![OpenAI](https://img.shields.io/badge/-OpenAI-333333?style=flat&logo=OpenAI)
+<p align="center">
+  Agente desenvolvido no curso <strong>Agentes Autônomos com Redes Generativas</strong> da <a href="https://www.i2a2.com.br/">I2A2</a>.
+</p>
 
-# Supabase.
+---
+
+### 🚀 Tecnologias e Frameworks Utilizados
+
+<p align="left">
+  <img src="https://img.shields.io/badge/-n8n-333333?style=flat&logo=n8n" />
+  <img src="https://img.shields.io/badge/-OpenAI-333333?style=flat&logo=openai" />
+  <img src="https://img.shields.io/badge/-Supabase-333333?style=flat&logo=supabase" />
+</p>
+
+Neste projeto, foi utilizada uma arquitetura **low-code**, com foco em automação inteligente e integração de dados em tempo real:
+
+- **n8n**: Plataforma de automação baseada em nós.
+- **OpenAI API**: Geração de linguagem natural contextualizada (modelo GPT-4.1-mini).
+- **Supabase**: Banco de dados PostgreSQL para armazenamento das notas fiscais e seus itens.
+
+---
+
+### 🧩 Componentes Usados no n8n
+
+- **🔹 Chat Trigger**  
+  Utilizado para simular ou receber mensagens reais de usuários. Pode futuramente ser integrado ao WhatsApp ou Telegram.
+
+- **🧠 AI Agent (OpenAI)**  
+  Responsável por interpretar e gerar respostas inteligentes. Utiliza prompt customizado e conexão com ferramentas para tomada de decisão.
+
+- **🗄️ PostgreSQL Tools**  
+  Dois nós para consultas diretas na base Supabase:
+  - `nfs_cabecalho`: dados gerais da nota fiscal.
+  - `nfs_itens`: produtos e serviços relacionados à nota.
+
+- **💬 Memória de Conversa (memoryBufferWindow)**  
+  Permite manter o contexto das últimas 8 interações para respostas mais coerentes e naturais.
+
+---
+
+### 🛠️ Estrutura do Banco de Dados (Supabase)
+
+| Tabela         | Descrição                                                       |
+|----------------|-----------------------------------------------------------------|
+| `nfs_cabecalho` | Informações gerais da nota (emitente, valor, data, etc.).       |
+| `nfs_itens`     | Itens da nota (produto, quantidade, valor, CFOP, etc.).         |
+
+As tabelas se relacionam pela coluna `CHAVE_DE_ACESSO`, permitindo consultas cruzadas entre cabeçalho e itens da nota.
+
+---
+
+### 🧠 Arquitetura Geral:
+Usuário 
+- ChatTrigger (n8n) 
+- AI Agent (OpenAI + Prompt + Ferramentas) 
+- PostgreSQL Tool (nfs_cabecalho e nfs_itens) 
+- AI Agent 
+- Resposta ao Usuário
+
+---
+
+### 📋 Etapas do Funcionamento
+
+1. **📥 Recepção da Mensagem**
+   - Trigger de chat inicia a conversa com uma saudação personalizada.
+
+2. **🧠 Processamento da Pergunta**
+   - AI Agent identifica a intenção do usuário.
+   - Utiliza mensagens de sistema robustas para guiar o comportamento do modelo.
+
+3. **📊 Consulta aos Dados**
+   - Com base na `CHAVE_DE_ACESSO`, realiza buscas precisas nas tabelas do Supabase.
+
+4. **🧠 Memória de Conversa**
+   - Mantém contexto de até 8 mensagens para manter coerência.
+
+5. **📤 Geração da Resposta**
+   - Se houver dados: retorna uma resposta clara e informativa.
+   - Se não houver: responde com transparência ao usuário.
+
+---
+
+### 🌐 Acesse o Agente Online
+
+<p align="left">
+  <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+</p>
+
+[🔗 Clique aqui para acessar o agente](https://silvia-rodrigues.app.n8n.cloud/webhook/9dd6b60e-6c9f-477d-bb5f-56626ccd1b6a/chat)
+
+---
+
+### 👨‍💼 Sobre os desenvolvedores do projeto:
+
+Arthur
+- 💻 Desenvolvedor Back-End com foco em **Node.js**, **TypeScript**, e **IA aplicada a agentes conversacionais**.
+- 🎓 Formado em **Sistemas de Informação**
+- 🚀 Experiência prática com integração de IA, automações com **n8n**, e banco de dados em **Supabase/PostgreSQL**.
+
+Fabiana Gonçalves 
+
+Alisson
+
+Patrícia Monteiro
+
+Silvia Marques
+---
+
+### 🛠️ Nossas Skills:
+
+![Python](https://img.shields.io/badge/-Python-333333?style=flat&logo=python)
+![JavaScript](https://img.shields.io/badge/-JavaScript-333333?style=flat&logo=javascript)
+![Node.js](https://img.shields.io/badge/-Node.js-333333?style=flat&logo=node.js) 
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-333333?style=flat&logo=postgresql)
 ![Supabase](https://img.shields.io/badge/-Supabase-333333?style=flat&logo=supabase)
+![OpenAI](https://img.shields.io/badge/-OpenAI-333333?style=flat&logo=openai)
+![n8n](https://img.shields.io/badge/-n8n-333333?style=flat&logo=n8n)
 
-Foi a plataforma escolhida para armazenar os dados estruturados em duas tabelas:
+---
 
-*nfs_cabecalho:* com dados gerais das notas fiscais (emitente, destinatário, valor, data, etc.).
+### 🌍 Onde nos encontrar:
 
-*nfs_itens:* com os itens comercializados em cada nota (produto, quantidade, valor, CFOP, etc.).
-A relação entre as tabelas se dá pela coluna "CHAVE_DE_ACESSO", permitindo ao agente realizar consultas cruzadas conforme a pergunta do usuário.
-# Arquitetura Geral
-Usuário → ChatTrigger (n8n) 
-        → AI Agent (OpenAI + Regras) 
-        → PostgreSQL Tool (Supabase - Tabelas nfs_cabecalho e nfs_itens) 
-        → AI Agent → Resposta Inteligente ao Usuário
-# Etapas e Componentes da Solução
-1. Recepção de Mensagens (ChatTrigger)
-2. O nó ChatTrigger simula a entrada de mensagens do usuário, podendo futuramente ser integrado ao WhatsApp ou Telegram.
-- Mensagem de boas-vindas personalizada (“Olá! 👋 Meu nome é Sabrina...”) dá início à conversa.
-3. Processamento da Pergunta (AI Agent + GPT)
-- O AI Agent é o núcleo de tomada de decisão da solução.
-- Ele utiliza:
-o	System Message robusto para orientar o modelo de linguagem sobre como deve agir.
-o	Conexões com ferramentas específicas para acesso seguro aos dados (nfs_cabecalho, nfs_itens).
-- O modelo de linguagem GPT-4.1-mini (via OpenAI API) interpreta a pergunta do usuário e decide qual tabela consultar.
-4. Consulta aos Dados (Supabase + PostgreSQL Tools)
-- Dois nós PostgresTool fazem a ponte com o Supabase:
-o	Um para a tabela nfs_cabecalho (dados da nota).
-o	Outro para a tabela nfs_itens (produtos e serviços).
-- As consultas são feitas com base na CHAVE_DE_ACESSO para manter a integridade relacional dos dados.
-5. Memória de Conversa (Simple Memory)
-- O componente memoryBufferWindow mantém o contexto de até 8 interações.
-- Garante que o agente "lembre" de perguntas anteriores e mantenha coerência nas respostas.
-6. Resposta ao Usuário
-- O agente monta uma resposta clara e didática com base nos dados reais.
-- Se os dados não estiverem disponíveis, o agente responde de forma transparente:
-“Não é possível responder com os dados disponíveis.”
+[![Email](https://img.shields.io/badge/-artstar10jobs@gmail.com-006bed?style=flat-square&logo=Gmail&logoColor=white)](mailto:artstar10jobs@gmail.com)
+[![GitHub](https://img.shields.io/github/followers/artstar10?label=follow&style=social)](https://github.com/artstar10)
 
-# Chat Online para interagir com o agente:
+---
 
-![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)
+<h3 align="center">🚧 Projeto em constante evolução 🚀</h3>
 
-https://silvia-rodrigues.app.n8n.cloud/webhook/9dd6b60e-6c9f-477d-bb5f-56626ccd1b6a/chat
+
