@@ -94,12 +94,15 @@ Usuário
 
 ### 👨‍💼 Sobre os desenvolvedores do projeto:
 
-Arthur
+Arthur Neves de Oliveira
 - 💻 Desenvolvedor Back-End com foco em **Node.js**, **TypeScript**, e **IA aplicada a agentes conversacionais**.
-- 🎓 Formado em **Sistemas de Informação**
-- 🚀 Experiência prática com integração de IA, automações com **n8n**, e banco de dados em **Supabase/PostgreSQL**.
+- 🎓 Formação em **Sistemas de Informação**
+- 🚀 Experiência prática como desenvolvimento de assistentes, chatbots e agentes na área de inteligência artificial 
 
-Fabiana Gonçalves 
+Fabiana Gonçalves Menezes
+- 🗣️ Profissional Mentora de Negócios 
+- 🎓 Formação em marketing 
+- 🚀 Atualmente Graduando em inteligência artificial 
 
 Alisson
 
