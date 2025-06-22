@@ -1,4 +1,4 @@
-<h1 align="center">🤖 Agente_NF - Assistente Inteligente para Notas Fiscais</h1>
+<h1 align="center"> Agente_NF - Assistente Inteligente para Notas Fiscais</h1>
 
 <p align="center">
   Agente desenvolvido no curso <strong>Agentes Autônomos com Redes Generativas</strong> da <a href="https://www.i2a2.com.br/">I2A2</a>.
@@ -92,44 +92,10 @@ Usuário
 
 ---
 
-### 👨‍💼 Sobre os desenvolvedores do projeto:
 
-Arthur Neves de Oliveira
-- 💻 Desenvolvedor Back-End com foco em **Node.js**, **TypeScript**, e **IA aplicada a agentes conversacionais**.
-- 🎓 Formação em **Sistemas de Informação**
-- 🚀 Experiência prática como desenvolvimento de assistentes, chatbots e agentes na área de inteligência artificial 
 
-Fabiana Gonçalves Menezes
-- 🗣️ Profissional Mentora de Negócios 
-- 🎓 Formação em marketing 
-- 🚀 Atualmente Graduando em inteligência artificial 
 
-Alisson
 
-Patrícia Monteiro
 
-Silvia Marques
----
-
-### 🛠️ Nossas Skills:
-
-![Python](https://img.shields.io/badge/-Python-333333?style=flat&logo=python)
-![JavaScript](https://img.shields.io/badge/-JavaScript-333333?style=flat&logo=javascript)
-![Node.js](https://img.shields.io/badge/-Node.js-333333?style=flat&logo=node.js) 
-![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-333333?style=flat&logo=postgresql)
-![Supabase](https://img.shields.io/badge/-Supabase-333333?style=flat&logo=supabase)
-![OpenAI](https://img.shields.io/badge/-OpenAI-333333?style=flat&logo=openai)
-![n8n](https://img.shields.io/badge/-n8n-333333?style=flat&logo=n8n)
-
----
-
-### 🌍 Onde nos encontrar:
-
-[![Email](https://img.shields.io/badge/-artstar10jobs@gmail.com-006bed?style=flat-square&logo=Gmail&logoColor=white)](mailto:artstar10jobs@gmail.com)
-[![GitHub](https://img.shields.io/github/followers/artstar10?label=follow&style=social)](https://github.com/artstar10)
-
----
-
-<h3 align="center">🚧 Projeto em constante evolução 🚀</h3>
 
 
