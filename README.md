@@ -84,10 +84,6 @@ Usuário
 
 ### 🌐 Acesse o Agente Online
 
-<p align="left">
-  <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-</p>
-
 [🔗 Clique aqui para acessar o agente](https://silvia-rodrigues.app.n8n.cloud/webhook/9dd6b60e-6c9f-477d-bb5f-56626ccd1b6a/chat)
 
 
