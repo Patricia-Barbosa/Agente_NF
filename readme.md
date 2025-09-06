@@ -1,103 +1,70 @@
+# Agente Inteligente para Cálculo de Vale Refeição (VR)
 
-<h1 align="center"> Agente_NF - Assistente Inteligente para Notas Fiscais</h1>
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![Pandas](https://img.shields.io/badge/Pandas-2.0-blue.svg)
+![LangChain](https://img.shields.io/badge/LangChain-0.1-blue.svg)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)
 
-<p align="center">
-  Agente desenvolvido no curso <strong>Agentes Autônomos com Redes Generativas</strong> da <a href="https://www.i2a2.com.br/">I2A2</a>.
-</p>
+Este projeto, desenvolvido como parte do Desafio 4, automatiza o processo mensal de cálculo e compra de Vale Refeição (VR) para uma empresa. A solução consolida múltiplas fontes de dados, aplica regras de negócio complexas e gera um relatório final preciso para o fornecedor, além de disponibilizar um agente de IA para análises interativas dos resultados.
 
----
+## 📋 Tabela de Conteúdos
 
-### Tecnologias e Frameworks Utilizados
+- [Funcionalidades](#-funcionalidades)
+- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [Começando](#-começando)
+  - [Pré-requisitos](#-pré-requisitos)
+  - [Instalação e Configuração](#-instalação-e-configuração)
+- [Como Executar](#-como-executar)
+- [O Papel do Agente de IA](#-o-papel-do-agente-de-ia)
+- [Saídas do Projeto](#-saídas-do-projeto)
+- [Autor](#-autor)
 
-<p align="left">
-  <img src="https://img.shields.io/badge/-Python-333333?style=flat&logo=python" />
-  <img src="https://img.shields.io/badge/-Pandas-333333?style=flat&logo=pandas" />
-  <img src="https://img.shields.io/badge/-LangChain-333333?style=flat&logo=langchain" />
-  <img src="https://img.shields.io/badge/-OpenRouter-333333?style=flat&logo=openai" />
-  <img src="https://img.shields.io/badge/-Google%20Colab-333333?style=flat&logo=google-colab" />
-</p>
+## ✨ Funcionalidades
 
-Neste projeto, foi utilizada uma arquitetura baseada em Python para a criação de um agente inteligente, com foco em análise de dados e respostas em linguagem natural:
+* **Consolidação de Dados**: Agrega e unifica dados de 10 planilhas distintas, incluindo informações de funcionários ativos, admissões, desligamentos, férias e afastamentos.
+* **Aplicação de Regras de Negócio**: Calcula o valor do benefício aplicando regras específicas, como desconto de dias de férias e elegibilidade baseada na data de desligamento.
+* **Mapeamento Inteligente**: Corrige automaticamente inconsistências nos nomes dos sindicatos entre diferentes planilhas para garantir a precisão dos cálculos.
+* **Geração de Relatório para Fornecedor**: Cria a planilha final `VR MENSAL 05.2025.xlsx` no layout exato de 10 colunas, pronta para envio ao fornecedor.
+* **Análise Interativa com Agente de IA**: Permite que um usuário faça perguntas em linguagem natural sobre os resultados do cálculo, como "Qual o custo total para a empresa?" ou "Quais os 5 sindicatos de maior custo?".
 
-- **Python**: Linguagem principal para o desenvolvimento do agente.
-- **Pandas**: Manipulação e análise de dados tabulares (CSV de notas fiscais).
-- **LangChain**: Framework para construção de agentes com LLMs.
-- **OpenRouter (Mistral-7B-Instruct)**: Plataforma para uso do modelo `mistralai/mistral-7b-instruct` via API.
-- **Google Colab**: Ambiente em nuvem para execução do notebook interativo.
+## 🛠️ Tecnologias Utilizadas
 
----
+* **Python**: Linguagem principal para o desenvolvimento.
+* **Pandas**: Para manipulação e análise de dados de alta performance.
+* **LangChain & LangChain Experimental**: Framework para desenvolvimento de aplicações com LLMs, utilizado na criação do agente.
+* **LangChain-OpenAI**: Biblioteca para integração com modelos de linguagem.
+* **Matplotlib**: Para a geração de gráficos e visualizações.
+* **Google Colab / Jupyter Notebook**: Ambiente de desenvolvimento interativo.
 
-### Componentes Usados no Código
+## 🚀 Começando
 
-- **🧠 Agente LangChain (create_pandas_dataframe_agent)**  
-  Responsável por interpretar perguntas e gerar respostas a partir dos DataFrames do Pandas. Utiliza prompt customizado e ferramentas Python para realizar operações nos dados.
+Siga estas instruções para configurar e executar o projeto em seu próprio ambiente.
 
-- **📊 Pandas DataFrames**  
-  Dois DataFrames principais para armazenamento e análise:
+### 📋 Pré-requisitos
 
-  - `df_cabecalho`: Dados gerais da nota (emitente, data, valor total, etc.).
-  - `df_itens`: Produtos e serviços (descrição, valor, quantidade, CFOP, etc.).
+* Uma conta Google (para acesso ao Google Drive e Google Colab).
+* Uma chave de API de um provedor de LLM compatível (ex: OpenRouter), pois o agente precisa de acesso a um modelo de linguagem.
 
-- **💬 Memória de Conversa**  
-  Embora o uso de `memoryBufferWindow` não esteja explícito, o agente preserva contexto básico durante a interação com o modelo de linguagem.
+### ⚙️ Instalação e Configuração
 
----
+1.  **Clone ou faça o download** deste repositório para a sua máquina local.
+2.  **Faça o upload do arquivo `Desafio 4 - Dados.zip`** para uma pasta no seu Google Drive. Por exemplo: `My Drive/Colab Notebooks/`.
+3.  **Faça o upload do notebook `Agente_VR_Desafio_4.ipynb`** para o Google Colab.
+4.  **Configure a Chave de API**:
+    * Dentro do notebook no Colab, clique no ícone de chave (Secrets) no menu à esquerda.
+    * Crie uma nova "secret" com o nome `OPENROUTER_API_KEY`.
+    * Cole a sua chave de API no campo "Value" e ative a permissão para o notebook acessá-la.
 
-### Estrutura dos Dados (Pandas)
+## ▶️ Como Executar
 
-| DataFrame     | Descrição                                                        |
-|---------------|------------------------------------------------------------------|
-| `df_cabecalho`| Informações gerais da nota fiscal (emitente, data, valor, etc.) |
-| `df_itens`    | Itens da nota (produto, quantidade, valor unitário, CFOP, etc.) |
+1.  Abra o notebook `Agente_VR_Desafio_4.ipynb` no Google Colab.
+2.  Verifique no **Passo 4** se o caminho para o arquivo ZIP (`zip_file_path`) corresponde à estrutura de pastas do seu Google Drive.
+3.  Execute todas as células em ordem sequencial, do topo ao fim. O notebook é autoexplicativo e cada passo está devidamente comentado.
 
-Ambos os DataFrames são integrados pela coluna `CHAVE_DE_ACESSO`, permitindo análise cruzada entre itens e cabeçalhos.
+## 🤖 O Papel do Agente de IA
 
----
+O agente de Inteligência Artificial é uma peça fundamental desta solução, atendendo à exigência de uso "efetivo" de agentes no projeto.
 
-### Arquitetura Geral:
-
-Usuário  
-→ Interface Web Flask (mensagem)  
-→ Agente LangChain (Pandas + Prompt)  
-→ DataFrames `df_cabecalho` e `df_itens`  
-→ Agente LangChain  
-→ Resposta ao Usuário
-
----
-
-### Etapas do Funcionamento
-
-1. **Recepção da Mensagem**
-   - O usuário envia uma pergunta sobre notas fiscais por meio de uma interface web (Flask + HTML + JS).
-
-2. **Processamento da Pergunta**
-   - O agente interpreta a intenção da pergunta via modelo `mistralai/mistral-7b-instruct` utilizando LangChain.
-   - Um prompt customizado define o comportamento analítico do agente.
-
-3. **Consulta aos Dados**
-   - O agente utiliza Pandas para filtrar, agrupar ou buscar informações nos CSVs carregados como DataFrames.
-   - A coluna `CHAVE_DE_ACESSO` permite cruzamento de dados entre `df_cabecalho` e `df_itens`.
-
-4. **Geração da Resposta**
-   - O agente retorna a resposta de forma clara, objetiva e em português.
-   - Em caso de ausência de dados, a resposta é transparente ao usuário.
-
----
-
-### 🌐 Acesse o Agente Online
-
-> Atualmente, o agente é executado em ambiente Google Colab e exposto por ngrok.  
-> Para testar, execute o notebook `Arthur_Agente_Desafio_3.ipynb`.
-
----
-
-### Nome do Grupo: Agentes Inteligentes Legacy
-
-Alunos:
-1. Arthur Neves de Oliveira Santos  
-2. Fabiana Gonçalves  
-3. Francisco Alisson de Souza  
-4. Patrícia Monteiro Barbosa  
-5. Silvia Marques Almeida Rodrigues
-
----
+* **Onde é usado?**: O agente é implementado no **Passo 9** do notebook, após a conclusão de todos os cálculos e a criação do dataframe final.
+* **Como é usado?**: Ele utiliza a biblioteca LangChain para criar uma interface de conversação sobre os dados já processados. Utilizando o prompt customizado (`prompt-para-apoio-analise.txt`), o agente se torna um especialista na folha de pagamento de benefícios. Sua função é permitir que um usuário de negócio (como um analista de RH) realize consultas analíticas complexas em português, sem precisar escrever nenhum código.
+* **Por que é efetivo?**: Ele transforma um relatório estático em uma fonte de dados interativa e auditável, agregando uma camada de inteligência e facilit
